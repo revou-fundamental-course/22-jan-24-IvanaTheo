@@ -1,0 +1,748 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+:root
+{
+    --green:green;
+    --black: #130f40;
+    --light-color: #666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,1);
+
+    --border: 2rem solid rgba(0,0,0,1);
+    --outline: .1rem solid rgba(0,0,0,1);
+}
+
+*
+{
+    font-family: 'Acme', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html
+{
+    font-size:62.5%;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+    scroll-padding-top: 7rem;
+}
+
+body
+{
+    background: rgb(214, 185, 238);
+}
+
+/* css code for banner*/
+section
+{
+    padding: 2rem 9%;
+}
+
+.heading
+{
+    text-align: center;
+    padding: 2rem o;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: rgb(170, 92, 128);
+}
+
+.heading span
+{
+    background: rgb(205, 179, 207);
+    color: rgb(212, 36, 118);
+    display: inline-block;
+    padding: .5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%,0% 0%);
+}
+
+.btn
+{
+    border: .2px solid var(--black);
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: 5rem;
+    color: rgb(223, 87, 109);
+    cursor: pointer;
+    background: none;
+}
+
+.btn:hover
+{
+    background: #8b5e99;
+    color: #fff;
+}
+
+.header
+{
+    border: 0px solid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: #d5a6e7;
+    box-shadow: var(--box-shadow);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.header .logo
+{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    padding-left: 5%;
+    color:rgb(170, 92, 128)
+
+}
+
+img
+{
+    width: 15%;
+}
+
+.header .navbar a
+{
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: rgb(197, 95, 129);  
+    margin-right: 5rem;
+}
+
+.header .navbar a:hover 
+{
+    color: rgb(180, 56, 230);
+}
+
+.header .icons div
+{
+    border: 0px solid;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius:  .5rem;
+    background: #eee;
+    color: rgb(197, 95, 129);  
+    font-size: 2rem;
+    margin-right: .3rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header .icons div:hover
+{
+    background: rgb(197, 134, 221);
+    color: white;
+}
+
+#menu-btn
+{
+    display: none;
+}
+
+
+/* SHOPPING CART */
+
+.header .search-form
+{
+    border: 0px solid;
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    max-width: 50rem;
+    height: 5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display:flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header .search-form.active
+{
+    right: 2rem;
+    transition: 0.1s linear;
+}
+
+.header .search-form input
+{
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 0 1.5rem;
+}
+
+.header .search-form label
+{
+    font-size: 2.2rem;
+    padding-right: 3rem;
+    padding-left: 8rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .search-form label:hover
+{
+    color: rgb(197, 95, 129);
+}
+
+
+/* SHOPPING CART */
+
+.header .shopping-cart
+{
+    border: 0px solid;
+    position: absolute;
+    top: 100%;
+    right: -110%;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    background:#fff;
+}
+
+.header .shopping-cart.active
+{
+    right: 2rem;
+    transition: 0.1s linear;
+}
+
+.header .shopping-cart .box
+{
+    border: 0px solid blue;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    margin: 1rem 0;   
+}
+
+.header .shopping-cart .box img
+{
+    height: 8rem;
+    width: 8rem;
+}
+
+.header .shopping-cart .box .fa-trash
+{
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    cursor: pointer;
+    color: var(--light-color);
+    transform: translateY(-50%);
+}
+
+.header .shopping-cart .fa-trash:hover
+{
+    color:#ba73cf;
+}
+
+.header .shopping-cart .box .content h3
+{
+   color: rgb(168, 115, 159); 
+   font-size: 1.7rem;
+   padding-bottom: 1rem;
+}
+
+.header .shopping-cart .box .content spam
+{
+   color: rgb(207, 166, 200); 
+   font-size: 1.6rem;
+}
+
+.header .shopping-cart .box .content .quantity
+{
+   padding-left: 1rem; 
+}
+
+header .shopping-cart .total
+{
+    font-size: 2rem;
+    padding: 0.1rem 0;
+    text-align: center;
+    color: #3b0000;
+}
+
+.header .shopping-cart .btn
+{
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+
+/* LOGIN */
+
+.header .login-form
+{
+    border: 0px solid;
+    position: absolute;
+    width: 30rem;
+    top: 110%;
+    right: -110%;
+    box-shadow: var(--box-shadow);
+    padding: .2rem;
+    border-radius: 1rem;
+    background: #fff;
+    text-align: center;
+}
+
+.header .login-form.active
+{
+    right: 2rem;
+    transition: 0.1s linear;
+}
+
+.header .login-form h3
+{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: rgb(173, 101, 101);
+}
+
+.header .login-form .box
+{
+    width: 100%;
+    border: 0px solid;
+    margin: .7rem 0;
+    background: #eee;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+}
+
+.header .login-form p
+{
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    color: var(--light-color);
+}
+
+.header .login-form p a
+{
+    color: #ca8abc;
+    text-decoration: underline;
+}
+
+
+/* HOME */
+
+.home
+{
+    border: 0px solid;
+    display: flex;
+    justify-content: center;
+    background: rgb(224, 179, 187) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 22rem;
+    padding-bottom: 6rem;
+}
+
+.home .content
+{
+    border: 0px solid;
+    text-align: center;
+    width: 60rem;
+}
+
+.home .content h3
+{
+    color: rgb(191, 102, 199);
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.home .content span
+{
+    color: rgb(170, 92, 128);
+    padding: 1rem;
+}
+
+.home .content p
+{
+    color: rgb(212, 36, 118);
+    font-size: 1.7rem;
+    padding: 0;
+    line-height: 1.8 ;
+}
+
+/*OUR CATEGORIES*/
+
+.categories .box-container
+{
+    border: 0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.categories .box-container .box
+{
+    border: 0px solid red;
+    padding: 3rem 2rem;
+    background: #f1d6ebce;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.categories .box-container .box:hover
+{
+    box-shadow: 1px 1px 10px 4px var(--light-color);
+}
+
+.categories .box-container .box img
+{
+    margin: 1rem 0;
+    height: 15rem;
+    width: 14rem;
+}
+
+.categories .box-container .box h3
+{
+    font-size: 2.5rem;
+    line-height: 1.8;
+    color: rgb(170, 92, 128);
+}
+
+.categories .box-container .box p
+{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: rgb(191, 102, 199);
+}
+
+/*FASHION*/
+
+.products .wrapper
+{
+    border: 0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.products .wrapper .box
+{
+    border: 0px solid red;
+    border-radius: 3rem;
+    padding: 3rem 2rem;
+    background: #f1d6ebce;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.products .wrapper .box:hover
+{
+    box-shadow: 1px 1px 10px 4px var(--light-color);
+}
+
+.products .wrapper .box img
+{
+    margin: 1rem 0;
+    height: 15rem;
+    width: 14rem;
+}
+
+.products .wrapper .box img h1
+{
+    font-size: 2.5rem;
+    color: rgb(170, 92, 128);
+}
+
+.products .wrapper .box .price
+{
+    font-size: 2rem;
+    color: rgb(191, 102, 199);
+    padding: .5rem 0;
+}
+
+
+/* REVIEW */
+
+.review .box-container
+{
+    border: 0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.review .box-container .box
+{
+    border: 0px solid red;
+    padding: 3rem 2rem;
+    background: #f1d6ebce;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.review .box-container .box:hover
+{
+    box-shadow: 1px 1px 10px 4px var(--light-color);
+}
+
+.review .box-container .box img
+{
+    margin: 1rem 0;
+    height: 15rem;
+    width: 14rem;
+}
+
+.review .box-container .box p
+{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: rgb(191, 102, 199);
+}
+
+.review .box-container .box h3
+{
+    font-size: 2.5rem;
+    line-height: 1.8;
+    color: rgb(170, 92, 128);
+}
+
+.categories .box-container .box .stars
+{
+    color:rgb(252, 201, 61);
+    font-size: 1.7rem;
+}
+
+
+/* FOOTER */
+
+.footer .box-container
+{
+    border: 0px solid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 1.5rem;
+    padding-top: 5rem;
+}
+
+.footer .box-container .box h3
+{
+    font-size: 2.5rem;
+    color: rgb(191, 102, 199);
+    padding: 1rem 0;
+}
+.footer .box-container .box span
+{
+    color: rgb(170, 92, 128);
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .links
+{
+    display: block;
+    color: #8b5e99;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .links i
+{
+    color: rgb(180, 56, 230);
+    padding: .5rem;
+}
+
+.footer .box-container .box .links:hover i
+{
+    padding-right: 2rem;
+}
+
+.footer .box-container .box p
+{
+    line-height: 1.8;
+    color: #3b1a2c;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .share a
+{
+    border: 0px solid;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color: rgb(180, 56, 230);
+    margin-left: .2rem;
+    background: rgb(229, 210, 230);
+    text-align: center;
+}
+
+.footer .box-container .box .share a:hover
+{
+    background: #ba73cf; ;
+    color: #fff;
+}
+
+.footer .box-container .box .name
+{
+    width: 100%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: rgb(229, 210, 230);
+    font-size: 1.6rem;
+    color:rgb(180, 56, 230);
+    text-transform: none;
+}
+
+.footer .box-container .box .email
+{
+    width: 100%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: rgb(229, 210, 230);
+    font-size: 1.6rem;
+    color:rgb(180, 56, 230);
+    text-transform: none;
+}
+
+
+/* Gambar Bawah */
+
+.img .end-img
+{
+    margin-top: 0.01rem;
+    height: 3rem;
+    height: 30rem;
+    width: 30rem;
+}
+
+
+/* END */
+
+.end .credit
+{
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #3b0000;
+    border-width: 1rem;
+    border-top: var(--border);
+    border-top-width: 1px;
+}
+
+.end .credit span
+{
+    color: #9e2383;
+}
+
+
+@media(max-width:450px)
+{
+    html
+    {
+        font-size:50%;
+    }
+    .header
+    {
+        padding: 2rem;
+    }
+    section
+    {
+        padding: 2rem;
+    }
+}
+
+
+@media(max-width:768px)
+{
+    #menu-btn
+    {
+        display: inline-block;
+    }
+
+    .header .search-form
+    {
+        width: 90%;
+    }
+
+    .header .navbar.active
+    {
+        right: 2rem;
+        transition: 0.1s linear;
+    
+    }
+    .header .navbar
+    {
+        position:  absolute;
+        top: 110%;
+        right: -110%;
+        width: 30rem;
+        box-shadow:var(--box-shadow);
+        border-radius: .5rem;
+        background:  #fff;
+    }
+
+    .header .navbar a 
+    {
+        font-size: 2rem;
+        margin: 2rem 2.5 rem;
+        display: block;
+    }
+}
+
+@media(max-width:450px)
+{
+    html
+    {
+        font-size: 50%;
+    }
+
+    .heading
+    {
+        font-size: 2.5rem;
+    }
+
+    .footer
+    {
+        text-align: center;
+    }
+
+    .img
+    {
+        text-align: center;
+    }
+
+    .end
+    {
+        text-align: center;
+    }
+}
+
